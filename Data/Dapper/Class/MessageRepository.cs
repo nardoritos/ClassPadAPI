@@ -14,7 +14,7 @@ namespace Data.Dapper.Class
             List<Messages> ret;
             using (var db = GetMySqlConnection())
             {
-                const string sql = @"select idmsg, nomemsg, datamsg, imagemsg, checkmsg, textmsg from appmensagens";
+                const string sql = @"select idmsg, nomemsg, datamsg, imagemsg, checkmsg, textmsg from appmensagem";
 
                 ret = db.Query<Messages>(sql, commandType: CommandType.Text).ToList();
             }
@@ -27,7 +27,7 @@ namespace Data.Dapper.Class
             List<Messages> ret;
             using (var db = GetMySqlConnection())
             {
-                const string sql = @"select idmsg, nomemsg, datamsg, imagemsg, checkmsg, textmsg from appmensagens where id_usuario = @Id";
+                const string sql = @"select idmsg, nomemsg, datamsg, imagemsg, checkmsg, textmsg from appmensagem where id_usuario = @Id";
 
                 ret = db.Query<Messages>(sql, new { Id = id }, commandType: CommandType.Text).ToList();
             }
